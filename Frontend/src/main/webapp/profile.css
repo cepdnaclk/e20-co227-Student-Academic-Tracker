@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    background: url(img/5.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 80%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.header {
+    background-color: #800000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.profile-picture {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-picture img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+#upload-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.profile-picture:hover #upload-button {
+    display: block;
+}
+
+.name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+section {
+    flex: 1;
+    margin: 3px;
+}
+
+section h2 {
+    margin-bottom: 10px;
+    color: #800000;
+}
+
+.user-details{
+    border: 3px solid rgba(0, 0, 0, .125);
+    border-radius: .5rem;
+    flex-basis: 45%;
+    padding-left: 10px;
+}
+
+.miscellaneous, .reports, .login-activity {
+    flex-basis: 30%;
+    background-clip: border-box;
+    border: 3px solid rgba(0, 0, 0, .125);
+    border-radius: .5rem;
+    padding-left: 10px;
+    color: -webkit-link;
+    cursor: pointer;
+}
+
+.user-details p, .login-activity p, .course-details p {
+    margin-bottom: 10px;
+}
+
+.user-details span, .login-activity span {
+    color: #555;
+}
+
+.edit-btn, .save-btn {
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+    transition: all 0.4s ease;
+}
+
+.edit-btn {
+    display: inline-block;
+}
+
+.edit-btn:hover {
+    background-color: #fff;
+    color: #800000;
+    transform: scale(1.1);
+}
+
+.save-btn {
+    display: none;
+}
+
+.save-btn:hover {
+    background-color: #fff;
+    color: #800000;
+    transform: scale(1.1);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+.no-underline {
+    text-decoration: none;
+    color: lightslategrey;
+    display: block;
+    margin: 5px 0;
+}
+
+.no-underline:hover {
+    text-decoration: underline;
+}

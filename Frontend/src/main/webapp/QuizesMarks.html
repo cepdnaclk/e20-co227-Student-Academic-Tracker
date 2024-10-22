@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Grades</title>
+    <link rel="stylesheet" href="Grades.css">
+    <link href = "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel = "stylesheet">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header class="header">
+   
+        <section class="flex">
+     
+           <a href="homelec.html" class="logo">Student Academic Tracker</a>
+     
+           <form action="search.html" method="post" class="search-form">
+              <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+              <button type="submit" class="fas fa-search"></button>
+           </form>
+     
+           <div class="icons">
+              <div id="menu-btn" class="fas fa-bars"></div>
+              <div id="search-btn" class="fas fa-search"></div>
+              <div id="user-btn" class="fas fa-user"></div>
+              <div id="toggle-btn" class="fas fa-sun"></div>
+              <div id="notify" class="toggle-btn fas fa-bell"></div>
+           </div>
+     
+           <div class="profile">
+              <img src="img/Profile.png" class="image" alt="">
+               <h3 class="name"><span class="nameD"></span></h3>
+              <p class="role"><span style="color: black;"><b>Lecturer</b></span></p>
+              <a href="AdminProfile.html" class="btn">view profile</a>
+           </div>
+
+           <div class="notification">
+            <h3 class="name">notifications</h3>
+         </div>
+
+
+     
+        </section>
+     
+     </header> 
+     
+
+     <div class="side-bar">
+
+      <div class="close-btn">
+         <i class="fas fa-times"></i>
+      </div>
+   
+      <div class="profile-side">
+         <img src="img/Profile.png" class="image" alt="">
+          <h3 class="name"><span class="nameD"></span></h3>
+         <p class="role"><span style="color: black;"><b>Lecturer</b></span></p>
+         <p>Your Login ID: <span class="userIDDisplay"></span></p>
+      </div>
+   
+      <nav class="navbar">
+         <a href="homelec.html"><i class="fas fa-home"></i><span>home</span></a>
+         <a href="manageCourses.html"><i class="fas fa-book"></i><span>Manage Assignment Marks</span></a>
+         <a href="Courselist.html"><i class="fas fa-tasks"></i><span>Manage Quizes Marks</span></a>
+         <a href="Grades.html"><i class="fas fa-graduation-cap"></i><span>Manage Paper Marks</span></a>
+         <a href="calnder_admin.html"><i class="fas fa-calendar-alt"></i><span>Your Calendar</span></a>
+         <a href="Adlogin.html" id="logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a>
+      </nav>
+   
+   </div>
+    
+   <main>
+    <h1>Quiz Marks
+        <button id="insertBtn"> Insert Record +</button>
+    </h1>
+    <div id="dialog">
+        <div>
+            <label for="description">Reg_No</label>
+            <input type="text" id="description" />
+            <br>
+            <label for="amount">Marks</label>
+            <input type="number" id="amount" step=".01" />
+            <br>
+            <div id="buttons">
+                <button id="Save">Save</button>
+            </div>
+            <button id="close">X</button>
+        </div>
+    </div>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Reg_No</th>
+                <th>Marks</th>
+                <th>Act</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td>E/20/271</td>
+                <td>74</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+
+        </tbody>
+        
+    </table>
+    
+</main>
+
+<script src="Grades.js"></script>
+<script src="homelec.js"></script>
+<script src="admin_login.js"></script>
+<!--<script src="Session_admin.js"></script>-->
+</body>
+</html>

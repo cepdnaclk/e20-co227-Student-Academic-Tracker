@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url(img/55.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+}
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: crimson;
+    color: floralwhite;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+.library-resources {
+    list-style: none;
+    padding: 0;
+}
+.library-resources li {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+.library-resources li:last-child {
+    border-bottom: none;
+}
+.resource-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+.resource-description {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+.resource-link {
+    text-decoration: none;
+    color: #007BFF;
+}
+.resource-link:hover {
+    text-decoration: underline;
+}

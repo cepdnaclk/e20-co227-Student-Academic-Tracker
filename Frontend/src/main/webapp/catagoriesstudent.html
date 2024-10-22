@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades</title>
+    <link rel="stylesheet" href="catagories.css">
+    <link href = "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel = "stylesheet">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<header class="header">
+
+    <section class="flex">
+
+        <a href="home.html" class="logo">Student Academic Tracker</a>
+
+        <form action="search.html" method="post" class="search-form">
+            <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+            <button type="submit" class="fas fa-search"></button>
+        </form>
+
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="toggle-btn" class="fas fa-sun"></div>
+            <div id="notify" class="toggle-btn fas fa-bell">
+                <span class="notification-dot" id="notification-dot"></span>
+            </div>
+
+        </div>
+
+        <div class="profile">
+            <img src="img/Profile.png" class="image" alt="">
+            <h3 class="name"><span class="nameDisplay"></span></h3>
+            <p class="role"><span style="color: black;"><b>Student</b></span></p>
+            <a href="profile.html" class="btn">view profile</a>
+        </div>
+
+        <div class="notification">
+            <h3 class="name">Notifications</h3>
+            <ul id="notification-list">
+                <!-- Notifications will be appended here -->
+            </ul>
+        </div>
+
+    </section>
+
+</header>
+
+
+<div class="side-bar">
+
+    <div class="close-btn">
+        <i class="fas fa-times"></i>
+    </div>
+
+    <div class="profile-side">
+        <img src="img/Profile.png" class="image" alt="">
+        <h3 class="name"><span class="nameDisplay"></span></h3>
+        <p class="role"><span style="color: black;"><b>Student</b></span></p>
+        <p>Your Login Register Number: <span class="regNoDisplay"></span></p>
+    </div>
+
+    <nav class="navbar">
+        <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="my_courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+        <a href="Ranking.html" id="rank"><i class="fas fa-trophy"></i><span>Rank list</span></a>
+        <a href="calendar.html" id="calendar-link"><i class="fas fa-calendar-alt"></i><span>Your calendar</span></a>
+        <a href="calculator.html"><i class="fas fa-calculator"></i><span>Calculator</span></a>
+        <a href="Stdlogin.html" id="logout"><i class="fas fa-sign-out-alt"></i><span>Log out</span></a>
+    </nav>
+
+</div>
+
+<main>
+    <section class="dashboard">
+        <h1 id="courseCodeH1"><span style="color: white;"><b>Course code: </b></span></h1>  <!--course name should be here-->
+        <hr>
+    </section>
+</main>
+
+<div class="wrapper">
+    <div class="card">
+        <img src="img/selectCourse01.jpg">
+        <div class="title1">Exam Marks</div>
+        <div class="info">
+            <p>Manage Exam Marks and Grades</p>
+            <a id="examMarksBtn" href=# class="btn">Click Here</a>        <!--place the html page link-->
+        </div>
+    </div>
+    <div class="card">
+        <img src="img/selectCourse02.jpg">
+        <div class="title">Assignments Marks</div>
+        <div class="info">
+            <p>Manage Assignment Marks</p>
+            <a id="assignmentMarksBtn" href="AssignmentMarksStudent.html" class="btn">Click here</a>        <!--place the html page link-->
+        </div>
+    </div>
+    <div class="card">
+        <img src="img/selectCourse03.jpg">
+        <div class="title3">Quizzes Marks</div>
+        <div class="info">
+            <p>Manage Quizzes Marks</p>
+            <a href="QuizMarksStudent.html" class="btn">Click here</a>                  <!--place the html page link-->
+        </div>
+    </div>
+</div>
+
+
+<script src="home.js"></script>
+<script src="script_login.js"></script>
+<script src="catagoriesstudent.js"></script>
+<!--<script src="Session_admin.js"></script>-->
+</body>
+</html>

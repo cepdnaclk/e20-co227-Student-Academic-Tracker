@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Assignments</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assignmentDetail.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <!-- Course Information -->
+    <div class="course-info text-center mb-4">
+        <h1 id="courseCodeId">Course ID: <span id="courseId"></span></h1>
+        <h2 id="courseCodeIdName">Course Name: <span id="courseName">Introduction to Programming</span></h2>
+    </div>
+
+    <!-- Assignments Box -->
+    <div class="assignments-box">
+        <div class="assignment-card shadow p-3 mb-5 bg-white rounded">
+            <div class="assignment-info">
+                <h3 id="assignmentNameH3" class="text-primary"></h3>
+                <p id="deadLine"><strong>Due Date:</strong></p>
+            </div>
+            <div class="assignment-actionsmt-3">
+                <div id="assignment-list"></div>
+                <a class="btn btn-success" onclick="uploadBtn()">Upload</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assignment List -->
+    <div id="AssignmentList"></div>
+
+    <!-- Modal for Uploading Assignments -->
+    <div id="course-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn-addsubmission">&times;</span>
+            <h2>Add Answer</h2>
+            <form id="course-form" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">File</label>
+                    <input type="file" id="file" name="file" multiple class="form-control-file">
+                </div>
+                <button type="submit" id="save_course" class="btn btn-primary">Add submission</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="assignmentDetail.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.top-bar {
+    background-color: #232b2b; /* Background color with opacity */
+    color: white;
+    padding: 10px 20px;
+}
+
+.top-bar h1 {
+    margin: 0;
+}
+
+.top-bar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.top-bar nav ul li {
+    margin-left: 20px;
+}
+
+.top-bar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.top-bar nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Show dropdown items as block elements */
+.nav .dropdown-menu li {
+    display: block;
+}
+
+/* Style the dropdown menu */
+.nav .dropdown-menu {
+    width: 100%;
+    background-color:  #232b2b; /* Background color with opacity */
+    display: none;
+}
+
+/* Change background color of dropdown items on hover */
+.nav .dropdown-menu li a:hover {
+    color: white;
+    background-color:  #232b2b;
+    border-radius: 5px;
+}
+
+/* Display dropdown menu when parent li is hovered over */
+.nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+#carouselExampleSlidesOnly {
+    max-height: 100vw; /* Adjust the value as needed */
+}
+
+/* Set images as background for carousel items with less opacity */
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7; /* Adjust the opacity as needed */
+
+}
+
+.carousel-caption{
+    background: rgba(255,255,255,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Customize the appearance of the active carousel indicator */
+.carousel-indicators .active {
+    background-color: #007bff; /* Change to desired active indicator color */
+}
+
+.about_webpage {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust the position to the exact center */
+    color: white; /* Text color */
+    text-align: center; /* Center align text */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for readability */
+    padding: 20px; /* Add padding around the content */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.about_webpage h1 {
+    font-size: 60px; /* Font size for the heading */
+    margin-bottom: 10px; /* Bottom margin for the heading */
+}
+
+.about_webpage p {
+    font-size: 18px; /* Font size for the paragraph */
+    margin-bottom: 20px; /* Bottom margin for the paragraph */
+}
+
+.about_webpage a {
+    color: #fff; /* Link color */
+    text-decoration: underline; /* Underline link */
+}
+
+.about_webpage a:hover {
+    color: #ccc; /* Link color on hover */
+}

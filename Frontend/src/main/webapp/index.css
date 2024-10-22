@@ -1,0 +1,115 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #23E3C9;
+}
+
+.top-bar {
+    background-color: #232b2b;
+    color: white;
+    padding: 10px 20px;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar .logo {
+    margin: 0;
+}
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.nav-link:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #4da1a1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust based on header height */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slide 60s infinite;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%; /* Change from 90% to 100% */
+    object-fit: cover; /* Ensure the image covers the entire slide */
+}
+
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(0); }
+    30% { transform: translateX(-100%); }
+    55% { transform: translateX(-100%); }
+    60% { transform: translateX(-200%); }
+    85% { transform: translateX(-200%); }
+    90% { transform: translateX(-300%); }
+    100% { transform: translateX(-300%); }
+    
+}
+
+.about_webpage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.about_webpage h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.about_webpage p {
+    font-size: 1.2em;
+}

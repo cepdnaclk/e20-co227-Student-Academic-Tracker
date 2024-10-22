@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background: url(img/44.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .2s linear;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.view-courses {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    margin: 2rem auto;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.view-courses h1 {
+    margin-bottom: 1.5rem;
+}
+
+#course-list {
+    margin-top: 2rem;
+}
+
+.course-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.course-item h3 {
+    margin: 0;
+}
+
+.course-item button {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.course-item button:hover {
+    background: #c0392b;
+}
+
+
+.btn {
+    display: inline-block;
+    background: #4CAF50;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #45a049;
+}
+
+.head{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #027f9f
+}

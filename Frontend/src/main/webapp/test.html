@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment File</title>
+</head>
+<body>
+    <h1>Assignment File</h1>
+
+    <div id="AssignmentList">
+        <div class="assignment-item">
+            <h3>Assignment Name: CO 225- Assignment 2</h3>
+            <p><strong>Assignment Deadline:</strong> 2025/8/10</p>
+            <p><strong>Assignment Message:</strong> ALL Students should do this</p>
+            <a href="#" class="btn btn-primary">Download file</a>
+        </div>
+    </div>
+    <!-- Example parameters -->
+    <script>
+        // Replace these values with actual values
+        const adminId = 'CO';
+        const courseId = 'CO200';
+        const fileName = 'CO 200 -1';
+        const dataType = '.pdf'
+
+        // Construct URL with query parameters
+        const fileUrl = `//localhost:8090/api/v1/user/getfile/${adminId}/${courseId}?fileName=${fileName}${dataType}`;
+
+        // Create download link
+        document.write(`<a href="${fileUrl}" download>Download Assignment File</a>`);
+
+        
+    </script>
+</body>
+</html>

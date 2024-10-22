@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-picture">
+                <img id="profile-img" src="default-profile.png" alt="Profile Picture">
+                <input type="file" id="profile-picture-input" accept="image/*" style="display:none;">
+                <button id="upload-button">Change Picture</button>
+            </div>
+            <h1 class="name"><span id="name">ZIYAM ZAHEER MR</span></h1>
+        </div>
+
+        <div class="content">
+            <section class="user-details">
+                <h2>User details</h2>
+                <p>First Name: <span id="firstName"></span></p>
+                <p>Last Name: <span id="lastName"></span></p>
+                <p>Email address: <span id="email"></span></p>
+                <p>Country: <span id="country"></span></p>
+                <p>City/town: <span id="city"></span></p>
+                <button class="edit-btn">Edit profile</button>
+                <button class="save-btn" style="display:none;">Save</button>
+            </section>
+
+            <section class="miscellaneous">
+                <h2>Miscellaneous</h2>
+                <ul>
+                    <li><a href="#" class="no-underline">Blog entries</a></li>
+                    <li><a href="#" class="no-underline">Forum posts</a></li>
+                    <li><a href="#" class="no-underline">Forum discussions</a></li>
+                </ul>
+            </section>
+
+            <section class="reports">
+                <h2>Reports</h2>
+                <ul>
+                    <li><a href="#" class="no-underline">Browser sessions</a></li>
+                </ul>
+            </section>
+
+            <section class="login-activity">
+                <h2>Login activity</h2>
+                <p>Last access to site: <span></span></p>
+            </section>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

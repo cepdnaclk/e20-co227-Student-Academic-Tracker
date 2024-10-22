@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    background-size: cover;
+
+    background: url(img/course_reg.png);
+    background-size: 100% auto; 
+    background-repeat: no-repeat; 
+    padding-left: 20rem;
+
+
+}
+
+header {
+    margin-top: 40px;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h1 {
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+}
+
+.page-container {
+    text-align: center;
+}
+
+.table-container {
+    margin: auto;
+    overflow-x: auto; 
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%; 
+    max-width: 1000px; 
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-radius: 8px;
+}
+
+th {
+    font-size: 13px;
+    background-color: rgb(190, 190, 190);
+    width: 160px; 
+}
+
+td {
+    background-color: rgba(190, 190, 190, 0.395);
+}
+
+.first-cell {
+    font-size: 24px;
+    width: 18%; 
+}
+
+.second-cell {
+    font-size: 24px;
+    width: 70%; 
+}
+
+.third-cell {
+    font-size: 24px;
+    text-align: center;
+    width: 12%;
+}
+
+.courseID{
+    width: 18%;
+}
+
+.course-name{
+    width: 70%;
+}
+
+.checkbox-cell{
+    width: 12%;
+    text-align: center;
+}
+
+.upload-button {
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    background-color: lightblue;
+    border-radius: 1rem;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.side-bar {
+    background-color: rgba(190, 190, 190, 0.694);
+    position: fixed;
+    top: 0; left: 0;
+    width: 20rem;
+    height: 100vh;
+    z-index: 1200;
+    transition: .2s linear;
+    overflow-y: auto;
+}
+
+.side-bar .profile-side {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.side-bar .profile-side .image {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    width: 14rem;
+    height: 14rem;
+    object-fit: cover;
+}
+
+.side-bar .regNoDisplay {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.side-bar .profile-side .name {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.course-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+}
+ 

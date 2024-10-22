@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Assignments</title>
+    <link rel="stylesheet" href="saveStdAssignment.css">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Upload assignment form -->
+        <h2>Upload Assignment</h2>
+        <form id="uploadForm">
+            <input type="file" name="files" id="files" multiple><br>
+            <input type="text" id="assignmentName" placeholder="Assignment Name"><br>
+            <input type="text" id="studentId" placeholder="Student ID"><br>
+            <input type="text" id="courseId" placeholder="Course ID"><br>
+            <button type="submit">Upload</button>
+        </form>
+        
+        <!-- Delete assignment form -->
+        <h2>Delete Assignment</h2>
+        <form id="deleteForm">
+            <input type="text" id="delAssignmentName" placeholder="Assignment Name"><br>
+            <input type="text" id="delStudentId" placeholder="Student ID"><br>
+            <input type="text" id="delCourseId" placeholder="Course ID"><br>
+            <button type="submit">Delete</button>
+        </form>
+
+        <!-- Fetch all assignments -->
+        <h2>All Student Assignments</h2>
+        <button id="fetchAllBtn">Fetch Assignments</button>
+        <div id="assignmentList"></div>
+
+        <!-- Download assignment form -->
+        <h2>Download Assignment</h2>
+        <form id="downloadForm">
+            <input type="text" id="downloadStudentId" placeholder="Student ID"><br>
+            <input type="text" id="downloadCourseId" placeholder="Course ID"><br>
+            <input type="text" id="fileName" placeholder="File Name"><br>
+            <button type="submit">Download</button>
+        </form>
+    </div>
+
+    <script src="saveStdAssignment.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses</title>
+    <link rel="stylesheet" href="student_attendance.css">
+    <link href = "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel = "stylesheet">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<header class="header">
+
+    <section class="flex">
+
+        <a href="home.html" class="logo">Student Academic Tracker</a>
+
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="toggle-btn" class="fas fa-sun"></div>
+            <div id="notify" class="toggle-btn fas fa-bell"></div>
+        </div>
+
+        <div class="profile">
+            <img src="img/Profile.png" class="image" alt="">
+            <h3 class="name"><span class="nameDisplay"></span></h3>
+            <p class="role"><span style="color: black;"><b>Student</b></span></p>
+            <a href="profile.html" class="btn">View Profile</a>
+        </div>
+
+        <div class="notification">
+            <h3 class="name">Notifications</h3>
+        </div>
+
+    </section>
+
+</header>
+
+
+<div class="side-bar">
+
+    <div class="close-btn">
+        <i class="fas fa-times"></i>
+    </div>
+
+    <div class="profile-side">
+        <img src="img/Profile.png" class="image" alt="">
+        <h3 class="name"><span class="nameDisplay"></span></h3>
+        <p class="role"><span style="color: black;"><b>Student</b></span></p>
+        <p>Your Login Register Number: <span class="regNoDisplay"></span></p>
+    </div>
+
+    <nav class="navbar">
+        <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="my_courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+        <a href="Ranking.html" id="rank"><i class="fas fa-trophy"></i><span>Rank list</span></a>
+        <a href="calendar.html" id="calendar-link"><i class="fas fa-calendar-alt"></i><span>Your Calendar</span></a>
+        <a href="calculator.html"><i class="fas fa-calculator"></i><span>Calculator</span></a>
+        <a href="Stdlogin.html" id="logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a>
+    </nav>
+
+</div>
+
+<main>
+    <section class="dashboard">
+        <h1 id="courseCodeH1"><span style="color: white;"><b>Course Code: </b></span></h1>  <!--course name should be here-->
+        <hr>
+        <br>
+        <br>
+        <h1 id="stu_id"><span style="color: white;"><b>Registration Number</b>: </b></span></h1>
+        <br>
+        <br>
+        <h1 id="day"><span style="color: white;"><b>Days Attended</b>: </b></span></h1>
+    </section>
+    <div>
+        <br>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="getAttendance()">View Attendance</button>
+    </div>
+</main>
+
+<script src = "student_attendance.js"></script>
+<script src="script_login.js"></script>
+
+</body>
+</html>

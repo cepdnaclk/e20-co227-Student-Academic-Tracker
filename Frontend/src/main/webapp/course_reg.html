@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Online Course Registration</title>
+        <link rel="stylesheet" href="course_reg.css">
+        <link href = "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel = "stylesheet">
+        <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+
+        <header class="header">
+            <h1>Online Course Registration</h1>
+        </header>
+                
+        
+        <div class="side-bar">
+            <div class="profile-side">
+                <img src="img/Profile.png" class="image" alt="">
+                <h3 class="name"><span class="nameDisplay"></span></h3>
+                <p class="role"><span style="color: black; font-size: 16px;"></p>
+                <p style="color: black; font-size: 20px;; margin-top: 20px; margin-bottom: 10px;">Your Registration Number</p>
+                <p></p><span class="regNoDisplay"></span></p>
+            </div>
+        </div>
+
+        <div class = "page-container">
+                <table>
+                    <tr class="table-title">
+                        <th class="first-cell">Course ID</th>
+                        <th class="second-cell">Course Name</th>
+                        <th class="third-cell">Enroll</th>
+                    </tr>
+                </table>
+                <table>
+                    <form>
+                        <section class="view-courses">
+                        <div id="course-list"></div>
+                        </section>
+                    </form>
+                </table>
+
+            <button type="submit" class="upload-button">Upload</button>
+        </div>
+
+
+
+        
+    </body>
+</html>
+
+<script src="course_reg.js"></script>
+<script src="script_login.js"></script>

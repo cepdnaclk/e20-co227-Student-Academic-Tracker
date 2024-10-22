@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Courses</title>
+    <link rel="stylesheet" href="Courselist.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <section class="flex">
+            <a href="homelec.html" class="logo">Student Academic Tracker</a>
+            <form action="search.html" method="post" class="search-form">
+                <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+                <button type="submit" class="fas fa-search"></button>
+            </form>
+            <div class="icons">
+                <div id="menu-btn" class="fas fa-bars"></div>
+                <div id="search-btn" class="fas fa-search"></div>
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="toggle-btn" class="fas fa-sun"></div>
+                <div id="notify" class="toggle-btn fas fa-bell"></div>
+            </div>
+            <div class="profile">
+                <img src="img/Profile.png" class="image" alt="">
+                 <h3 class="name"><span class="nameD"></span></h3>
+                <p class="role"><span style="color: black;"><b>Lecturer</b></span></p>
+                <a href="AdminProfile.html" class="btn">view profile</a>
+             </div>
+            <div class="notification">
+                <h3 class="name">notifications</h3>
+            </div>
+        </section>
+    </header> 
+     
+    <div class="side-bar">
+        <div class="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="profile-side">
+            <img src="img/Profile.png" class="image" alt="">
+            <h3 class="name"><span class="nameD"></span></h3>
+            <p class="role"><span style="color: black;"><b>Lecturer</b></span></p>
+            <p>Your Login ID: <span class="userIDDisplay"></span></p>
+        </div>
+        <nav class="navbar">
+            <a href="homelec.html"><i class="fas fa-home"></i><span>home</span></a>
+            <a href="manageCourses.html"><i class="fas fa-book"></i><span>Manage Courses</span></a>
+            <a href="Courselist.html"><i class="fas fa-tasks"></i><span>Manage Assignments</span></a>
+            <a href="Grades.html"><i class="fas fa-graduation-cap"></i><span>Grades</span></a>
+            <a href="Attendance.html"><i class="fas fa-user-plus"></i><span>Student Attendance</span></a>
+            <a href="calendar.html"><i class="fas fa-calendar-alt"></i><span>Your Calendar</span></a>
+            <a href="Adlogin.html" id="logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a>
+        </nav>
+    </div>
+
+    <main>
+        <section class="view-courses">
+            <h1 class="head">Course List</h1>
+            <div id="course-list"></div>
+        </section>
+    </main>
+
+    <script src="Courselist..js"></script>
+    <!--<script src="Session_admin.js"></script>-->
+    <script src="admin_login.js"></script>
+</body>
+</html>

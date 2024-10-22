@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Calendar</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script src = "js/jquery-3.7.1.min.js"></script>
+<link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+    <div class="frame">
+        <div class="calendar">
+            <div class="month">
+                <i class="fas fa-angle-left prev"></i>
+                <div class="date">
+                    <h1></h1>
+                    <div class="year"></div>
+                </div>
+                <i class="fas fa-angle-right next"></i>
+            </div>
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days"></div>
+        </div>
+        
+        <div class="events">
+            <h2>Events</h2>
+            
+            <div class="events-list"></div>
+        </div>
+    </div>
+    <div class="add-event-wrapper" style="display: none;">
+      <div class="add-event-header">
+          <div class="title">Add Event</div>
+          <i class="fas fa-times close"></i>
+      </div>
+      <div class="add-event-body">
+          <form id="event-form">
+              <div class="add-event-input">
+                  <input type="hidden" class="event-date">
+                  <input type="text" placeholder="Event Name" class="event-title" id = "event_Title"required>
+              </div>
+              <div class="add-event-input">
+                  <input type="text" placeholder="Event Description" class="event-description" id = "event_Description">
+              </div>
+              <div class="add-event-footer">
+                  <button type="submit" class="add-event-btn">Add Event</button>
+              </div>
+          </form>
+      </div>
+  </div>
+    <button class="add-event">
+        <i class="fas fa-plus"></i>
+    </button>
+    <script> src="script_calendar.js"</script>"
+    <script src="calendar.js"></script>
+    <script src="script_login.js"></script>
+    <script src="Session.js"></script> 
+</body>
+</html>

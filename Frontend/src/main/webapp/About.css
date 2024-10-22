@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ddd;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content-section {
+    flex: 1 1 55%;
+    padding-right: 20px;
+}
+
+.image-section {
+    flex: 1 1 40%;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+}
+
+.content-section .title {
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.content-section .content h3 {
+    margin-top: 20px;
+    color: #5d5d5d;
+    font-size: 19px;
+}
+
+.content-section .content p {
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.content-section .button a {
+    background-color: #3d3d3d;
+    padding: 12px 40px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.content-section .button a:hover {
+    background-color: #a52a2a;
+}
+
+.content-section .social {
+    margin-top: 40px;
+}
+
+.content-section .social i {
+    color: #a52a2a;
+    font-size: 30px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.content-section .social i:hover {
+    color: #3d3d3d;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding-top: 50px;
+        flex-direction: column;
+    }
+
+    .content-section {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .image-section {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .content-section .title {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .content-section .content h3 {
+        text-align: center;
+    }
+
+    .content-section .button {
+        text-align: center;
+    }
+
+    .content-section .social {
+        text-align: center;
+    }
+}

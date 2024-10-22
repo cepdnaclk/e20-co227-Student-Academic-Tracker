@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Marks</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label,
+        input {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .response {
+            margin-top: 20px;
+        }
+
+        .assignment-button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+
+        }
+
+        .assignment-button:hover {
+            background-color: #0056b3;
+        }
+
+        .marks-info {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            color: #555;
+        }
+
+        .marks-info strong {
+            color: #000;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Assignemnt Mark Sheets</h1>
+
+<div class="response" id="responseCreateSheet"></div>
+<div class="response" id="responseAllSheets"></div>
+
+<script>
+    // Modify fetchAllSheets to collect marks
+    async function fetchAllSheets(studentId) {
+        const sheetName = localStorage.getItem('selectedCourseId');
+        const type = 'Assignment';
+        const adminId = localStorage.getItem('userID');
+        const courseId = localStorage.getItem('selectedCourseId');
+
+        try {
+            // Fetch the sheet URLs from your backend
+            const response = await fetch(`http://localhost:8090/api/v1/user/getsheet/${adminId}/${sheetName}/${type}`);
+            if (response.ok) {
+                const sheetData = await response.json();
+                console.log('Sheet URLs:', sheetData);
+
+                // Initialize an object to hold marks for all students
+                const allStudentMarks = {};
+                const maxMarksPerExam = 100; // Assuming each exam has a max mark of 100
+
+                // Fetch data from each Google Sheet URL
+                for (const sheet of sheetData) {
+                    const sheetUrl = sheet.url.replace('/edit', '/export?format=csv&usp=sharing'); // Change to CSV export link
+                    const sheetResponse = await fetch(sheetUrl);
+                    if (sheetResponse.ok) {
+                        const csvData = await sheetResponse.text();
+                        console.log(csvData);
+                        const rows = csvData.split('\n');
+
+                        // Extract marks for all students
+                        const headers = rows[0].split(',').map(header => header.trim()); // Trim headers
+                        const studentIdIndex = headers.indexOf('Student_id');
+                        const marksIndex = headers.indexOf('Marks');
+
+                        for (let i = 1; i < rows.length; i++) { // Start from 1 to skip header
+                            const cells = rows[i].split(',').map(cell => cell.replace(/\r/g, '').trim()); // Remove \r and trim each cell
+                            const studentId = cells[studentIdIndex];
+                            const marks = parseFloat(cells[marksIndex]) || 0; // Parse marks and default to 0 if not found
+
+                            // Initialize student data if not exists
+                            if (!allStudentMarks[studentId]) {
+                                allStudentMarks[studentId] = {
+                                    marks: [] // Store individual marks for each exam
+                                };
+                            }
+
+                            // Store the marks for this exam
+                            allStudentMarks[studentId].marks.push(marks);
+                        }
+                    } else {
+                        console.error("Error fetching Google Sheet data:", sheetResponse);
+                        document.getElementById('responseAllSheets').innerText = 'Error fetching Google Sheet. Please check the console for details.';
+                    }
+                }
+
+                // Calculate and log the percentage for each student
+                for (const studentId in allStudentMarks) {
+                    const studentData = allStudentMarks[studentId];
+                    const totalMarks = studentData.marks.reduce((acc, mark) => acc + mark, 0); // Sum up marks for percentage calculation
+                    const totalMaxMarks = studentData.marks.length * maxMarksPerExam; // Calculate total max marks based on number of exams
+                    const percentage = (totalMarks / totalMaxMarks) * 100;
+                    console.log(`Student ID: ${studentId}, Total Marks: ${totalMarks}, Percentage: ${percentage.toFixed(2)}%`);
+
+                    // Save percentage to the backend
+                    const assignmentMarkTotalDTO = {
+                        studentId: studentId,
+                        percentage: percentage,
+                        courseId: courseId
+                    };
+
+                    await fetch('http://localhost:8090/api/v1/user/assignmentMarkTotal', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(assignmentMarkTotalDTO),
+                    })
+                        .then(response => {
+                        if (response.ok) {
+                            console.log(`Successfully saved percentage for student ${studentId}`);
+                        } else {
+                            console.error(`Failed to save percentage for student ${studentId}`);
+                        }
+                    })
+                        .catch(error => {
+                        console.error("Error saving percentage:", error);
+                    });
+                }
+
+                // Call displaySheetUrls to show the marks for the logged-in student
+                const studentMarks = allStudentMarks[studentId] || { marks: [] }; // Get marks for the logged-in student
+                displaySheetUrls(sheetData, studentMarks.marks, studentId);
+
+            } else {
+                console.error("Error fetching sheet URLs:", response);
+                document.getElementById('responseAllSheets').innerText = 'Error fetching sheets. Please check the console for details.';
+            }
+        } catch (error) {
+            console.error("Error fetching sheet URLs or Google Sheet data:", error);
+            document.getElementById('responseAllSheets').innerText = 'Error fetching sheets. Please check the console for details.';
+        }
+    }
+
+    // Update displaySheetUrls to show individual marks
+    function displaySheetUrls(sheetUrls, studentMarks, studentId) {
+        const container = document.getElementById('responseAllSheets');
+        container.innerHTML = '';
+
+        sheetUrls.forEach((sheet, index) => {
+            const url = sheet.url;
+
+            // Create a container for the button
+            const buttonContainer = document.createElement('div');
+            buttonContainer.classList.add('button-container');
+
+            // Create button element for "Exam result"
+            const button = document.createElement('button');
+            button.innerText = `Assignment result ${index + 1}`;
+            button.classList.add('assignment-button');
+
+            button.addEventListener('click', () => {
+                window.open(url, '_blank');
+            });
+
+            // Create div for student ID and marks
+            const marksInfo = document.createElement('div');
+            marksInfo.classList.add('marks-info');
+
+            // Prepare marks display
+            const marksString = studentMarks[index] !== undefined ? studentMarks[index] : 'Not Found'; // Get marks for this exam
+            marksInfo.innerHTML = `For Student ID: <strong>${studentId}</strong> Marks: <strong>${marksString}</strong>`;
+
+            // Append the button and marks info to the container
+            buttonContainer.appendChild(button);
+            buttonContainer.appendChild(marksInfo);
+            container.appendChild(buttonContainer);
+        });
+    }
+
+    // Call fetchAllSheets on page load
+    window.onload = function () {
+        const studentId = localStorage.getItem('reg_no'); // Replace with dynamic retrieval if needed
+        fetchAllSheets(studentId);
+    };
+</script>
+
+</body>
+
+</html>

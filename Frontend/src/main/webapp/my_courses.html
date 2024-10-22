@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses</title>
+    <link rel="stylesheet" href="my_courses.css">
+    <link href = "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel = "stylesheet">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header class="header">
+
+        <section class="flex">
+
+            <a href="home.html" class="logo">Student Accademic Tracker</a>
+
+
+            <div class="icons">
+                <div id="menu-btn" class="fas fa-bars"></div>
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="toggle-btn" class="fas fa-sun"></div>
+                <div id="notify" class="toggle-btn fas fa-bell"></div>
+            </div>
+
+            <div class="profile">
+                <img src="img/Profile.png" class="image" alt="">
+                <h3 class="name"><span class="nameDisplay"></span></h3>
+                <p class="role"><span style="color: black;"><b>Student</b></span></p>
+                <a href="profile.html" class="btn">view profile</a>
+            </div>
+
+
+            <div class="notification">
+                <h3 class="name">notifications</h3>
+            </div>
+
+        </section>
+
+    </header>
+
+
+    <div class="side-bar">
+
+        <div class="profile-side">
+            <img src="img/Profile.png" class="image" alt="">
+            <h3 class="name"><span class="nameDisplay"></span></h3>
+            <p class="role"><span style="color: black;"><b>Student</b></span></p>
+            <p>Your Login Register Number: <span class="regNoDisplay"></span></p>
+        </div>
+
+        <nav class="navbar">
+            <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="my_courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+            <a href="Ranking.html" id="rank"><i class="fas fa-trophy"></i><span>Rank list</span></a>
+            <a href="calendar.html" id="calendar-link"><i class="fas fa-calendar-alt"></i><span>Your calendar</span></a>
+            <a href="calculator.html"><i class="fas fa-calculator"></i><span>Calculator</span></a>
+            <a href="Stdlogin.html" id="logout"><i class="fas fa-sign-out-alt"></i><span>Log out</span></a>
+        </nav>
+
+    </div>
+    <main>
+        <section class="dashboard">
+            <h1>
+                <div class="Your_current_GPA">
+                    <div style="font-size: 14px;">Your Current GPA</div>
+                    <div style="font-size: 14px; color: rgb(22, 37, 201);">
+                        <button type="submit" class="calculate_btn" id="calculate-gpa-btn" onclick="openPopup()">Calculate</button>
+                        <div class="popup" id="popup">
+                            <h2 class="content">Your Current GPA = 4.00</h2>
+                            <button type="button" class="calculate_btn" style="color:red" onclick="closePopup()">Close</button>
+                        </div>
+                    </div>
+                </div>
+                <span class = "title" style="color: black;"><b>My Courses</b></span>
+                <div class="course-reg">
+                    <div style="font-size: 14px;">Course Registration:</div>
+                    <div style="font-size: 14px; color: rgb(22, 37, 201);">
+                        <button type="submit" class="calculate_btn"><a href = "course_reg.html">Available</a></button>
+                    </div>
+            </h1>
+            <hr>
+            <div class="flex-container">
+
+
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let popup = document.getElementById("popup");
+        
+        function openPopup(){
+            popup.classList.add("open-popup");
+        }
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+    </script>
+
+    <script src = "my_courses.js"></script>
+    <script src="script_login.js"></script>
+    <script src="Session.js"></script>
+
+
+</body>
+</html>
