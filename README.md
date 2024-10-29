@@ -1,3 +1,4 @@
+---
 layout: home
 permalink: index.html
 
@@ -8,8 +9,8 @@ title: STUDENT ACADEMIC TRACKER
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# STUDENT ACADEMIC TRACKER
-
+# project Title
+STUDENT ACADEMIC TRACKER
 ---
 
 <!-- 
