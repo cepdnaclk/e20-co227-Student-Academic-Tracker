@@ -19,10 +19,10 @@ This is a sample image, to show how to add images to your page. To learn more op
  -->
 
 ## Team
--  E/20/016, Kavindu Gajendra, [email]e20016@eng.pdn.ac.lk
--  E/20/055, Dineth Shakya, [email]e20055@eng.pdn.ac.lk
--  E/20/231, Janith Madhura, [email]e20231@eng.pdn.ac.lk
--  E/20/404, Nethmin Tharusha, [email]e20404@eng.pdn.ac.lk
+-  E/20/016, Kavindu Gajendra, [email](e20016@eng.pdn.ac.lk)
+-  E/20/055, Dineth Shakya, [email](e20055@eng.pdn.ac.lk)
+-  E/20/231, Janith Madhura, [email](e20231@eng.pdn.ac.lk)
+-  E/20/404, Nethmin Tharusha, [email](e20404@eng.pdn.ac.lk)
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -33,9 +33,11 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ## Introduction
 
+...
+
 ## Other Sub Topics
 
-.....
+...
 
 ## Links
 
