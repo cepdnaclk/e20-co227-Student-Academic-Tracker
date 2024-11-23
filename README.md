@@ -45,6 +45,8 @@ Academic setbacks, such as poor performance, missed deadlines, and falling behin
 
 ## Other Sub Topics
 
+Using this system you can obtain,
+
 1. Student Performance Tracking
 
 This system is designed to provide detailed insights into students' academic performance. By tracking grades, assignments, and course activities, it enables educators to identify struggling students and offer timely support. The tracking system ensures that students receive the attention they need to improve their performance and stay motivated throughout the course.
