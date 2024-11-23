@@ -37,6 +37,7 @@ This is a sample image, to show how to add images to your page. To learn more op
 This project focuses on tracking individual student performance while also providing Learning Management System (LMS) functionalities. Below is a more detailed explanation of the ranking system and how it encourages student participation and engagement.
 
 •	Track and analyze students’ academic progress by monitoring their grades, attendance, assignments, and course activities.
+
 •	Provide LMS features, such as course management, assignment submission, notifications, and student collaboration.
 
 Academic setbacks, such as poor performance, missed deadlines, and falling behind in coursework, can severely impact a student’s academic journey. This student performance tracking system, integrated with LMS functionalities, plays a crucial role in mitigating academic losses and ensuring students stay on track toward success.
