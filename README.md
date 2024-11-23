@@ -45,6 +45,7 @@ Academic setbacks, such as poor performance, missed deadlines, and falling behin
 
 ## Other Sub Topics
 
+
 Using this system you can obtain,
 
 1. Student Performance Tracking
@@ -79,6 +80,7 @@ The GPA-based ranking system provides a transparent view of student performance,
 8. Attendance tracking
 
 The students attendance system allows lecturers to mark attendance of the students and students to view their attendance for each course enabaling active participation of students throuthout the course.
+
 
 ## Links
 
